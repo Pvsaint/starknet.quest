@@ -13,6 +13,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "baitcode",
+      "name": "Ilia Batii ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/801611?v=4",
+      "profile": "http://baitcode.github.com",
+      "contributions": [
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7,
