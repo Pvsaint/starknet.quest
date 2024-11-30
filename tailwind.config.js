@@ -22,6 +22,11 @@ module.exports = {
       },
       // ... Other colors you want to add
     },
+    extend: {
+      lineHeight: {
+        '12': '3.8rem'
+      },
+    }
   },
   plugins: [],
 };

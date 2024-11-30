@@ -5,7 +5,7 @@ import Button from "./button";
 import { FunctionComponent } from "react";
 import { Modal } from "@mui/material";
 import WalletIcons from "@components/UI/iconsComponents/icons/walletIcons";
-import getDiscoveryWallets from "get-starknet-core";
+import getDiscoveryWallets from "@starknet-io/get-starknet-core";
 import useGetDiscoveryWallets from "@hooks/useGetDiscoveryWallets";
 import Typography from "./typography/typography";
 import { TEXT_TYPE } from "@constants/typography";

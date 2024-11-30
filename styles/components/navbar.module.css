@@ -1,14 +1,15 @@
 .menuItem {
-  margin-left: 2.5rem /* 40px */;
-  font-size: 0.875rem /* 14px */;
+  margin-left: clamp(32px, 2.2vw, 40px) /* 40px */;
+  font-size: 1rem /* 16px */;
   line-height: 1.25rem /* 20px */;
   cursor: url(../../public/icons/pointer-cursor.png), pointer;
   font-weight: 600;
   color: var(--secondary);
+  font-family: Sora-Bold;
 }
 
 .menuItem {
-  text-transform: underline;
+  text-transform: none;
   cursor: url(../../public/icons/pointer-cursor.png), pointer;
   opacity: 1;
   transition: opacity 0.5s ease;
@@ -35,9 +36,9 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  height: 12vh;
+  padding-left: 8.8vw;
+  padding-right: 8.8vw; 
+  height: max(6.9vh, 100px);
   transition: background-color 1s ease;
   background-color: transparent;
 }
@@ -47,7 +48,7 @@
 }
 
 .buttonContainer {
-  margin: 0 1.25rem;
+  margin: 0 0 0 clamp(32px, 2.2vw, 40px);
 }
 
 .buttonContainer > button {
@@ -68,10 +69,11 @@
 }
 
 .buttonText {
+  min-width: 8.9vw;
   margin-right: 32px;
   text-transform: capitalize;
   font-weight: bold;
-  font-family: Sora-ExtraBold;
+  font-family: Sora-Bold;
   /* Body/middle/bold */
   font-size: 16px;
   font-weight: 700;
@@ -164,7 +166,12 @@
 }
 
 .navbarLogo {
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
+}
+
+.logo {
+  width: max(80px, 5.6vw);
+  height: max(80px, 5.6vw);
 }
 
 .socialIconContainer {

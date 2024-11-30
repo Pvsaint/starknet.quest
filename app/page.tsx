@@ -1,65 +1,48 @@
 "use client";
-import React, { useContext } from "react";
+import React, { useCallback } from "react";
 import styles from "@styles/Home.module.css";
 import { useRouter } from "next/navigation";
-import HowToParticipate from "@components/pages/home/howToParticipate";
-import Stats from "@components/UI/stats/stats";
 import Blur from "@components/shapes/blur";
-import { QuestsContext } from "@context/QuestsProvider";
-import FeaturedQuest from "@components/UI/featured_banner/featuredQuest";
-import QuestAndCollectionTabs from "@components/pages/home/questAndCollectionTabs";
-import CategoryTitle from "@components/UI/titles/categoryTitle";
+import Typography from "@components/UI/typography/typography";
+import { TEXT_TYPE } from "@constants/typography";
+import MainHeader from "@components/pages/home/hero";
+import Card from "@components/pages/home/card";
+import CallToAction from "@components/pages/home/callToAction";
+
 
 export default function Page() {
   const router = useRouter();
-  const { featuredQuest, categories, trendingQuests, quests } =
-    useContext(QuestsContext);
+    
+  const handleNavigateToDefi = useCallback(() => {
+    router.push("/discover/defi");
+  }, [router]);
+
+  const handleNavigateToQuests = useCallback(() => {
+    router.push("/quests");
+  }, [router]);
 
   return (
     <div className={styles.screen}>
-      <div className={styles.container}>
+      <div className="flex flex-col items-center justify-center">
         <div className={styles.blur1}>
           <Blur />
         </div>
-        <div className={styles.featured_quest_banner_container}>
-          <FeaturedQuest
-            heading="Featured"
-            key={featuredQuest?.id}
-            title={featuredQuest?.title_card}
-            onClick={() => router.push(`/quest/${featuredQuest?.id}`)}
-            imgSrc={featuredQuest?.img_card}
-            issuer={{
-              name: featuredQuest?.issuer ?? "",
-              logoFavicon: featuredQuest?.logo ?? "",
-            }}
-            reward={featuredQuest?.rewards_title}
-            desc={featuredQuest?.desc}
-            expiry={featuredQuest?.expiry_timestamp}
-            questId={featuredQuest?.id}
-          />
-        </div>
-        <QuestAndCollectionTabs
-          quests={quests}
-          categories={categories}
-          trendingQuests={trendingQuests}
-        />
-        <CategoryTitle
-          subtitle="Get access to our community"
-          title="About our quests"
-          corner="bottomLeft"
-          squares="bottomRight"
-        />
-        <Stats
-          stats={[
-            { name: "Quests NFT minted", value: "+1M" },
-            { name: "Unique addresses", value: "398K" },
-            { name: "Unique visitors", value: "+200K" },
-          ]}
-        />
-        <div className={styles.blur2}>
-          <Blur green />
-        </div>
-        <HowToParticipate />
+        
+        <MainHeader />
+
+        <CallToAction>
+          <Card title="DeFi" imgSrc="/home/defi.webp" onClick={handleNavigateToDefi}>
+            <Typography type={TEXT_TYPE.BODY_MICRO} color="textGray">
+              Access the top DeFi opportunities on Starknet and grow your assets effortlessly.
+            </Typography>
+          </Card>
+          <Card title="Quest" imgSrc="/home/quests.webp" onClick={handleNavigateToQuests}>
+            <Typography type={TEXT_TYPE.BODY_MICRO} color="textGray">
+              Complete exciting quests, earn rewards, and deepen your knowledge of Starknet.
+            </Typography>
+          </Card>
+        </CallToAction>
+        
       </div>
     </div>
   );

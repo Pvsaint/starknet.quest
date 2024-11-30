@@ -1,0 +1,9 @@
+.header {
+    font-family: 'Sora-Bold';
+    font-weight: 1000;
+
+    background: linear-gradient(90deg,
+      var(--primary) -0.12%,
+      var(--tertiary) 99.88%);
+    background-clip: text;
+}
