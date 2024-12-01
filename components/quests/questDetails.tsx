@@ -427,6 +427,7 @@ const QuestDetails: FunctionComponent<QuestDetailsProps> = ({
                   hasRootDomain={quest.id === 127 ? true : hasRootDomain}
                   setShowDomainPopup={setShowDomainPopup}
                   checkUserRewards={checkUserRewards}
+                  questId={questId}
                 />
               );
             })}

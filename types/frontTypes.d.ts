@@ -35,6 +35,7 @@ type Task = {
   customError: string;
   checkUserRewards?: () => void;
   expired: boolean;
+  questId?: string;
 };
 
 type TaskProps = Task & { id: number };

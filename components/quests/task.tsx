@@ -33,6 +33,7 @@ const Task: FunctionComponent<Task> = ({
   customError,
   expired,
   checkUserRewards,
+  questId,
 }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [isVerified, setIsVerified] = useState(false);
@@ -182,7 +183,8 @@ const Task: FunctionComponent<Task> = ({
             onClick={(e) => {
               e.stopPropagation();
               if (!address) return setError("Please connect your wallet first");
-              if (!hasRootDomain) return setShowDomainPopup(true);
+              if (!hasRootDomain && questId !== "224")
+                return setShowDomainPopup(true);
               if (verifyEndpointType === "quiz") return openTask();
               if (verifyRedirect) window.open(verifyRedirect);
               verify();
