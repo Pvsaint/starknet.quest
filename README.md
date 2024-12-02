@@ -101,6 +101,7 @@ Thanks go to these wonderful people:
   <tbody>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://www.starknet.id/"><img src="https://avatars.githubusercontent.com/u/78437165?v=4?s=100" width="100px;" alt="Fricoben"/><br /><sub><b>Fricoben</b></sub></a><br /><a href="https://github.com/lfglabs-dev/starknet.quest/commits?author=fricoben" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://baitcode.github.com"><img src="https://avatars.githubusercontent.com/u/801611?v=4?s=100" width="100px;" alt="Ilia Batii "/><br /><sub><b>Ilia Batii </b></sub></a><br /><a href="#design-baitcode" title="Design">🎨</a></td>
     </tr>
   </tbody>
 </table>
